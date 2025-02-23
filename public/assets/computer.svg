@@ -1,0 +1,80 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            @keyframes blink {
+                0% { opacity: 1; }
+                50% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            @keyframes type {
+                from { width: 0; }
+                to { width: 280px; }
+            }
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-5px); }
+                100% { transform: translateY(0px); }
+            }
+            #cursor {
+                animation: blink 1s infinite;
+            }
+            #typing-text {
+                animation: type 4s steps(30, end);
+            }
+            .screen-container {
+                transition: transform 0.3s ease;
+            }
+            .screen-container:hover {
+                transform: scale(1.02) translateY(-5px);
+            }
+            .monitor {
+                animation: float 4s ease-in-out infinite;
+            }
+        </style>
+    </defs>
+
+    <!-- Monitor Base -->
+    <path d="M150 320 L350 320 L370 350 L130 350" 
+          fill="#444" 
+          class="base"/>
+    
+    <!-- Monitor Stand -->
+    <rect x="235" y="270" width="30" height="50" fill="#333"/>
+
+    <!-- Monitor Frame -->
+    <g class="monitor screen-container">
+        <!-- Outer Frame -->
+        <rect x="100" y="100" width="300" height="170" 
+              rx="10" fill="#333" stroke="#444" stroke-width="5"/>
+        
+        <!-- Screen -->
+        <rect x="110" y="110" width="280" height="150" fill="#1a1a1a"/>
+        
+        <!-- Code Lines -->
+        <g fill="#63ff5b" opacity="0.8">
+            <text x="120" y="140" font-family="monospace" font-size="12"
+                  id="typing-text">> echo "Hi, Welcome to my website";</text>
+            <text x="120" y="170" font-family="monospace" font-size="12"
+                  opacity="0.4">> git commit -m "Have a nice day"</text>
+        </g>
+        
+        <!-- Blinking Cursor -->
+        <rect id="cursor" x="120" y="190" width="8" height="12" fill="#63ff5b"/>
+    </g>
+
+    <!-- Power Button -->
+    <circle cx="380" cy="255" r="3" fill="#666"/>
+    <circle cx="380" cy="255" r="2" fill="#44ff44" opacity="0.8">
+        <animate attributeName="opacity"
+                 values="0.8;0.3;0.8"
+                 dur="2s"
+                 repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Reflection -->
+    <path d="M130 120 Q250 140 370 120" 
+          stroke="white" 
+          stroke-width="1" 
+          fill="none" 
+          opacity="0.1"/>
+</svg>
