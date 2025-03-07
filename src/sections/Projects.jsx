@@ -79,21 +79,22 @@ const Projects = () => {
             </button>
           </div>
         </div>
-
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          {/* <Canvas>
-            <ambientLight intensity={Math.PI} />
-            <directionalLight position={[10, 10, 5]} />
-            <Center>
-              <Suspense fallback={<CanvasLoader />}>
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                  <DemoComputer texture={currentProject.texture} />
-                </group>
-              </Suspense>
-            </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
-          </Canvas> */}
-        </div>
+<div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full flex items-center justify-center overflow-hidden">
+  {currentProject.videoSrc ? (
+    <video 
+      className="w-full h-full object-cover" 
+      controls
+      autoPlay
+      muted
+      loop
+    >
+      <source src={currentProject.videoSrc} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  ) : (
+    <p className="text-white-600">No video available for this project</p>
+  )}
+</div>
       </div>
     </section>
   );

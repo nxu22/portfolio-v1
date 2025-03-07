@@ -68,6 +68,7 @@ export const myProjects = [
     //href: '',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
+    
     logoStyle: {
       backgroundColor: '#2A1816',
       border: '0.2px solid #36201D',
@@ -105,6 +106,7 @@ export const myProjects = [
     // href: '',
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
+    videoSrc: "/assets/videos/project-demo.mp4" ,
     logoStyle: {
       backgroundColor: '#13202F',
       border: '0.2px solid #17293E',
